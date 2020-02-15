@@ -1,6 +1,6 @@
 import Lux from "@lespantsfancy/lux";
 
-import Enum from "../enum/package";
+import Enum from "./../enum/package";
 
 export default class Element extends Lux.Node.Struct {
     constructor(name, type, order, {
@@ -85,7 +85,7 @@ export default class Element extends Lux.Node.Struct {
                 childrenKeys = [];
 
             let childrenObj = this.Children.reduce((a, v) => {
-                childrenKeys.push(c.Name);
+                childrenKeys.push(v.Name);
 
                 return {
                     ...a,
@@ -112,7 +112,7 @@ export default class Element extends Lux.Node.Struct {
     GetChild(indexOrName) {
         if(typeof indexOrName === "number") {
             return this.Children[ indexOrName ];
-        } else if(typeof key === "string" || key instanceof String) {
+        } else if(typeof indexOrName === "string" || indexOrName instanceof String) {
             this.Children.forEach((v, i) => {
                 if(v.Name === indexOrName) {
                     return this.Children[ i ];
@@ -134,7 +134,7 @@ export default class Element extends Lux.Node.Struct {
             this.Children.splice(indexOrName, 1);
 
             return true;
-        } else if(typeof key === "string" || key instanceof String) {
+        } else if(typeof indexOrName === "string" || indexOrName instanceof String) {
             this.Children.forEach((v, i) => {
                 if(v.Name === indexOrName) {
                     this.Children.splice(i, 1);

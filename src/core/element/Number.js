@@ -3,7 +3,7 @@ import Lux from "@lespantsfancy/lux";
 import Enum from "./../enum/package";
 import Element from "./Element";
 
-export default class Text extends Element {
+export default class Number extends Element {
     constructor(name, order, {
         value = [],
         defaultValue = null,
@@ -17,7 +17,7 @@ export default class Text extends Element {
         label = null,
         description = null
     } = {}) {
-        super(name, Enum.Type.TEXT, order, {
+        super(name, Enum.Type.NUMBER, order, {
             value,
             defaultValue,
             validators,
