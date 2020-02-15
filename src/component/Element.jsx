@@ -9,8 +9,11 @@ export default class Element extends Lux.React.ReactorComponent {
         console.log(this.context.getEntity("Test").prop("Root").GetChild(0).Name);
         console.log(Lux.React.Context.MasterNode.getEntity("Test").prop("Root").GetChild(0).Name);
         
-        return (                
-            <div>Element Placeholder</div>
+        return (               
+            <div>
+                <div>{ this.ep("Test", "Root").GetChild(0).Order }</div>
+                <div>{ this.ep("Test", "Root").GetChild(1).Order }</div>
+            </div> 
         );
     }
 }
