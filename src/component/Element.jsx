@@ -11,8 +11,9 @@ export default class Element extends Lux.React.ObserverComponent {
             <div>
                 { this.context._subject.GetChildren().map((c, i) => (
                     <div key={ i }>
-                        <p>{ c.Name }</p>
-                        <p>{ c.UUID() }</p>
+                        <div>
+                            <span>[{ c.Name }]</span>: <span>{ c.Order }</span>
+                        </div>
                     </div>
                 ))}
             </div> 

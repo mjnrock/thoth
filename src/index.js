@@ -50,6 +50,10 @@ Lux.React.Context.Observer.setSubject(new Core.Element.Element(
     }
 ));
 
+setTimeout(() => {
+    Lux.React.Context.Observer._subject.GetChild(0).Order = 19;
+}, 1000);
+
 ReactDOM.render(
     <App />,
     document.getElementById("root")

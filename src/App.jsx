@@ -17,6 +17,7 @@ export default class App extends Lux.React.MasterNodeComponent {
     // console.log(this.context.getEntity("Test").prop("Root").GetChild(0).Name);
     // console.log(Lux.React.Context.MasterNode.getEntity("Test").prop("Root").GetChild(0).Name);
     // }
+
     render() {
         return (
             <div>
