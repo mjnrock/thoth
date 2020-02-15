@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Lux from "@lespantsfancy/lux";
 
-import Core from "./../core/package";
+// import Core from "./../core/package";
 
 export default class Element extends Lux.React.ReactorComponent {
     render() {
