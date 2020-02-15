@@ -3,16 +3,18 @@ import Lux from "@lespantsfancy/lux";
 
 // import Core from "./../core/package";
 
-export default class Element extends Lux.React.ReactorComponent {
+export default class Element extends Lux.React.ObserverComponent {
     render() {
-        console.log(this.ep("Test", "Root").GetChild(0).Name);
-        console.log(this.context.getEntity("Test").prop("Root").GetChild(0).Name);
-        console.log(Lux.React.Context.MasterNode.getEntity("Test").prop("Root").GetChild(0).Name);
+        console.log(this.context._subject.GetChildren());
         
         return (               
             <div>
-                <div>{ this.ep("Test", "Root").GetChild(0).Order }</div>
-                <div>{ this.ep("Test", "Root").GetChild(1).Order }</div>
+                { this.context._subject.GetChildren().map((c, i) => (
+                    <div key={ i }>
+                        <p>{ c.Name }</p>
+                        <p>{ c.UUID() }</p>
+                    </div>
+                ))}
             </div> 
         );
     }
