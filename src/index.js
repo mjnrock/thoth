@@ -38,20 +38,31 @@ Lux.React.Context.Observer.setSubject(new Core.Element.Element(
         children: [
             new Core.Element.Element(
                 "child-1",
-                Core.Enum.TEXT,
+                Core.Enum.Type.TEXT,
                 1
             ),
             new Core.Element.Element(
                 "child-2",
-                Core.Enum.TEXT,
+                Core.Enum.Type.TEXT,
                 2
+            ),
+            new Core.Element.Element(
+                "child-3",
+                Core.Enum.Type.NUMBER,
+                3
+            ),
+            new Core.Element.Element(
+                "child-3",
+                Core.Enum.Type.NUMBER,
+                4
             )
         ]
     }
 ));
 
 setTimeout(() => {
-    Lux.React.Context.Observer._subject.GetChild(0).Order = 19;
+    Lux.React.Context.Observer.$().GetChild(3).Order = 1;
+    Lux.React.Context.Observer.$().GetChild(0).Order = 19;
 }, 1000);
 
 ReactDOM.render(

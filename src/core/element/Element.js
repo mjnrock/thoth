@@ -36,8 +36,6 @@ export default class Element extends Lux.Node.Struct {
             Meta: meta,
             RegEx: regex
         }, validators);
-
-        //TODO Create a "this.register(this._state[ @key ]<Array<Struct>>)" in Struct to allow for bubbling in this special list case (e.g. for Children)
     }
 
     GetDisplay() {
