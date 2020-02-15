@@ -1,5 +1,5 @@
-import Element from "./Element";
+import Template from "./template/package";
 
 export default {
-    Element
+    Template
 };
