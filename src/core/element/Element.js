@@ -190,4 +190,19 @@ export default class Element extends Lux.Node.Struct {
 
         return this.DefaultValue;
     }
+
+    /**
+     * A helper function for custom Event firing.  This will use #Struct.broadcast(e) to send the packaged Event to all subscribers
+     * @param {string} type 
+     * @param {any} payload
+     */
+    Invoke(type, payload) {
+        this.broadcast(new Lux.Node.Event(
+            type,
+            payload,
+            this
+        ));
+
+        return this;
+    }
 };
