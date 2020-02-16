@@ -20,7 +20,7 @@ export default class Container extends Lux.React.ObserverComponent {
         return (
             <div>
                 {
-                    this.context.$("GetChildren").sort((a, b) => a.Order - b.Order).map((c, i) => {
+                    this.context.$("GetChildren").map((c, i) => {
                         let Element = this.getClassByType(c);
 
                         return (

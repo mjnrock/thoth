@@ -111,11 +111,15 @@ export default class Element extends Lux.Node.Struct {
         if(typeof indexOrName === "number") {
             return this.Children[ indexOrName ];
         } else if(typeof indexOrName === "string" || indexOrName instanceof String) {
+            let child;
+
             this.Children.forEach((v, i) => {
                 if(v.Name === indexOrName) {
-                    return this.Children[ i ];
+                    return child = this.Children[ i ];
                 }
             });
+
+            return child;
         }
 
         return false;

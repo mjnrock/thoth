@@ -1087,10 +1087,10 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@lespantsfancy/lux@^0.3.23":
-  version "0.3.23"
-  resolved "https://registry.yarnpkg.com/@lespantsfancy/lux/-/lux-0.3.23.tgz#421cd3e96381a5d408032d2ecd3ba724e389ea71"
-  integrity sha512-UtU/OIS5nnFzHt9B22VxgsKvZkNdinSHn457E9M2VA/CDiF2qmOVYKxm2OnOYT4+nPtQeOATBLKKJual2QdB9w==
+"@lespantsfancy/lux@^0.3.26":
+  version "0.3.26"
+  resolved "https://registry.yarnpkg.com/@lespantsfancy/lux/-/lux-0.3.26.tgz#2ff0f9b4269c5327bc30016255d8efbf93ec5215"
+  integrity sha512-RtYmAGUSUPV1QwO82tmzZESYPLgQ9Z+3Kw4Q8b45b5+0HqfwG15Z9YozBycEcxq34ZH9XHSMx1cJ3IClNTeVmw==
   dependencies:
     node-fetch "^2.6.0"
     peerjs "^1.2.0"
