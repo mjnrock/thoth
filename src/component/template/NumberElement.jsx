@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import Element from "./Element";
 
-export default class NumberElement extends Component {
-    render() {
-        const element = this.props.value;
-
-        return (
-            <div className="blue">
-                <span>{ element.Name }</span> [ <span>{ element.Order }</span> ] [ <span>{ element.UUID() }</span> ]
-            </div> 
-        );
+export default class NumberElement extends Element {
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            rowColor: "blue"
+        };
     }
 }
