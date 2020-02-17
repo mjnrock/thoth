@@ -16,7 +16,7 @@ export default class App extends Lux.React.ObserverComponent {
     render() {
         return (
             <div>
-                <Component.Template.Container />
+                <Component.Editor.Container />
                 
                 <div>
                     <pre className="b ba br2">

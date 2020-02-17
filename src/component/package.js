@@ -1,5 +1,5 @@
-import Template from "./template/package";
+import Editor from "./editor/package";
 
 export default {
-    Template
+    Editor
 };

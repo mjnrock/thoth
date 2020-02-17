@@ -1,18 +1,18 @@
 import React from "react";
 import Lux from "@lespantsfancy/lux";
 
-import Core from "./../../core/package";
-import Template from "./package";
+import Core from "../../core/package";
+import Editor from "./package";
 
 export default class Container extends Lux.React.ObserverComponent {
     getClassByType(element) {
         switch(element.Type) {
             case Core.Enum.Type.NUMBER:
-                return Template.NumberElement;
+                return Editor.NumberElement;
             case Core.Enum.Type.TEXT:
-                return Template.TextElement;
+                return Editor.TextElement;
             default:
-                return Template.Element;
+                return Editor.Element;
         }
     }
 
