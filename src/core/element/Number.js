@@ -33,8 +33,8 @@ export default class Number extends Element {
         // this.RegEx = new RegExp("^[0-9]+([,.][0-9]+)?$");
     }
 
-    cleanValue(value, removeChars = []) {
-        value = super.cleanValue(value, removeChars);
+    _cleanValue(value, removeChars = []) {
+        value = super._cleanValue(value, removeChars);
 
         if(value.toString().includes(".")) {
             return value;

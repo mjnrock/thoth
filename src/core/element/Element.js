@@ -157,7 +157,7 @@ export default class Element extends Lux.Node.Struct {
         return this.Value;
     }
 
-    cleanValue(value, removeChars = []) {
+    _cleanValue(value, removeChars = []) {
         let rmvr = removeChars.reduce((a, v) => a.length ? `${ a }|${ v }` : `${ v }`, "");
 
         return value.replace(new RegExp(rmvr), "").trim();
