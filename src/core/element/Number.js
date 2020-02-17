@@ -32,4 +32,14 @@ export default class Number extends Element {
         //?  ex-post evaluation (e.g. data submission) | [,.][0-9]+ will always fail in real-time without copy and paste
         // this.RegEx = new RegExp("^[0-9]+([,.][0-9]+)?$");
     }
+
+    cleanValue(value, removeChars = []) {
+        value = super.cleanValue(value, removeChars);
+
+        if(value.toString().includes(".")) {
+            return value;
+        }
+
+        return isNaN(parseFloat(value)) ? value : parseFloat(value);
+    }
 };

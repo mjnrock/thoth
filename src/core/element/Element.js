@@ -157,6 +157,12 @@ export default class Element extends Lux.Node.Struct {
         return this.Value;
     }
 
+    cleanValue(value, removeChars = []) {
+        let rmvr = removeChars.reduce((a, v) => a.length ? `${ a }|${ v }` : `${ v }`, "");
+
+        return value.replace(new RegExp(rmvr), "").trim();
+    }
+
     //TODO This has not been tested for RegEx or Event firing
     SetValue(index, value) {
         if(arguments.length === 1) {
@@ -170,12 +176,13 @@ export default class Element extends Lux.Node.Struct {
             }
         }
 
-        let oldValue = Object.freeze(JSON.parse(JSON.stringify(this.Value)));
+        let oldValue = Object.freeze(JSON.parse(JSON.stringify(this.Value))),
+            newValue = this.cleanValue(value);
 
         if(index === -1) {
-            this.Value.push(value);
+            this.Value.push(newValue);
         } else if(typeof index === "number") {
-            this.Value[ index ] = value;
+            this.Value[ index ] = newValue;
         }
 
         this.broadcast(Lux.Node.Struct.PackageEventChange(this, "Value", this.Value, oldValue));
@@ -190,7 +197,7 @@ export default class Element extends Lux.Node.Struct {
                 }
 
                 return true;
-            });
+            }).map(v => this.cleanValue(v));
         } else if(values === null) {
             this.Value = [];
         }
