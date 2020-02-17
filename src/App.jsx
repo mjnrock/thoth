@@ -36,6 +36,10 @@ export default class App extends Lux.React.ObserverComponent {
                     <pre className="b ba br2">
                         { this.context.$().GetChild(3).UUID() }
                     </pre>
+                    
+                    {/* <pre className="b ba br2">
+                        { Lux.Core.Helper.StringifyCyclic(this.context, 2) }
+                    </pre> */}
                 </div>
             </div>
         );
