@@ -47,24 +47,22 @@ Lux.React.Context.Observer.setSubject(new Core.Element.Element(
                 Core.Enum.Type.TEXT,
                 3
             ),
-            new Core.Element.Element(
+            new Core.Element.Number(
                 "child-3",
-                Core.Enum.Type.NUMBER,
                 4
             ),
-            new Core.Element.Element(
+            new Core.Element.Number(
                 "child-4",
-                Core.Enum.Type.NUMBER,
                 8
             )
         ]
     }
 ));
 
-setTimeout(() => {
-    Lux.React.Context.Observer.$().GetChild("child-4").Order = 1;
-    Lux.React.Context.Observer.$().GetChild("child-1").Order = 19;
-}, 1000);
+// setTimeout(() => {
+//     Lux.React.Context.Observer.$().GetChild("child-4").Order = 1;
+//     Lux.React.Context.Observer.$().GetChild("child-1").Order = 19;
+// }, 1000);
 
 ReactDOM.render(
     <App />,

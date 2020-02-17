@@ -25,5 +25,11 @@ export default class Number extends Element {
             label,
             description
         });
+
+        //?  real-time evaluation (e.g. actively typing)
+        this.RegEx = new RegExp("^[0-9]*([,.]{0,1}[0-9]*)?$");
+        
+        //?  ex-post evaluation (e.g. data submission) | [,.][0-9]+ will always fail in real-time without copy and paste
+        // this.RegEx = new RegExp("^[0-9]+([,.][0-9]+)?$");
     }
 };

@@ -1,18 +1,36 @@
 import React, { Component } from "react";
 
 export default class Element extends Component {
-    //? This is really meant to show some different ways you can play with inheritence
-    defaultDisplay() {
-        const element = this.props.value;
+    constructor(props) {
+        super(props);
+        
+        this.refInput = React.createRef();
+        this.refButton = React.createRef();
+    }
 
-        return (
-            <div className={ this.state.rowColor }>
-                <span>{ element.Name }</span> [ <span>{ element.Order }</span> ] [ <span>{ element.UUID() }</span> ]
-            </div> 
-        );
+    btnClick(e) {
+        console.log(this.props.value.Value);
+    }
+
+    onChange(e) {
+        this.props.value.SetValue(e.target.value);
     }
 
     render() {
-        return this.defaultDisplay();
+        return (
+            <div>
+                <input
+                    ref={ input => this.refInput = input }
+                    type={ this.props.type || "text" }
+                    value={ this.props.value.Value }
+                    onChange={ (this.props.onChange || this.onChange).bind(this) }
+                />
+                <button
+                    className={ this.state.rowColor }
+                    ref={ btn => this.refButton = btn }
+                    onClick={ this.btnClick.bind(this) }
+                >Log</button>
+            </div>
+        );
     }
 }

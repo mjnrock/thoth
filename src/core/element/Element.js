@@ -159,6 +159,11 @@ export default class Element extends Lux.Node.Struct {
 
     //TODO This has not been tested for RegEx or Event firing
     SetValue(index, value) {
+        if(arguments.length === 1) {
+            value = index;
+            index = 0;
+        }
+
         if(this.RegEx instanceof RegExp) {
             if(!this.RegEx.test(value)) {
                 return false;
@@ -179,7 +184,15 @@ export default class Element extends Lux.Node.Struct {
     }
     SetValues(values) {
         if(Array.isArray(values)) {
-            this.Value = values;
+            this.Value = values.filter(v => {
+                if(this.RegEx instanceof RegExp) {
+                    return this.RegEx.test(v);
+                }
+
+                return true;
+            });
+        } else if(values === null) {
+            this.Value = [];
         }
 
         return this;

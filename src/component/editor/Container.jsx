@@ -5,7 +5,7 @@ import Core from "../../core/package";
 import Editor from "./package";
 
 export default class Container extends Lux.React.ObserverComponent {
-    getClassByType(element) {
+    getReactClass(element) {
         switch(element.Type) {
             case Core.Enum.Type.NUMBER:
                 return Editor.NumberElement;
@@ -21,7 +21,7 @@ export default class Container extends Lux.React.ObserverComponent {
             <div>
                 {
                     this.context.$("GetChildren").map((c, i) => {
-                        let Element = this.getClassByType(c);
+                        let Element = this.getReactClass(c);
 
                         return (
                             <Element key={ i } value={ c } />
