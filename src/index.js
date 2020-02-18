@@ -33,18 +33,16 @@ Lux.React.Context.MasterNode.attach("Test", {
 
 Lux.React.Context.Observer.setSubject(new Core.Element.Element(
     "root",
-    Core.Enum.Type.TEXT,
+    Core.Enum.Type.GROUP,
     0,
     {
         children: [
-            new Core.Element.Element(
+            new Core.Element.Text(
                 "child-1",
-                Core.Enum.Type.TEXT,
                 2
             ),
-            new Core.Element.Element(
+            new Core.Element.Text(
                 "child-2",
-                Core.Enum.Type.TEXT,
                 3
             ),
             new Core.Element.Number(
@@ -54,7 +52,25 @@ Lux.React.Context.Observer.setSubject(new Core.Element.Element(
             new Core.Element.Number(
                 "child-4",
                 8
-            )
+            ),
+            // new Core.Element.Element(
+            //     "child-5",
+            //     Core.Enum.Type.TEXT,
+            //     // Core.Enum.Type.GROUP,   //* This is the proper one, but hasn't been created yet
+            //     9,
+            //     {
+            //         children: [
+            //             new Core.Element.Text(
+            //                 "child-5-1",
+            //                 3
+            //             ),
+            //             new Core.Element.Number(
+            //                 "child-5-2",
+            //                 4
+            //             )
+            //         ]
+            //     }
+            // )
         ]
     }
 ));

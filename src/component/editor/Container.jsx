@@ -79,6 +79,4 @@ export default class Container extends Lux.React.ObserverComponent {
             </div>
         );
     }
-
-    //* The <Droppable droppableId> is what the @source and @destination objects will expose on a drag event
 }
