@@ -35,7 +35,7 @@ export default class Element extends Lux.Node.Struct {
 
             Meta: meta,
             RegEx: regex
-        }, validators);
+        }, { validators });
     }
 
     GetDisplay() {
