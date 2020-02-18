@@ -40,6 +40,15 @@ export default class App extends Lux.React.ObserverComponent {
                     {/* <pre className="b ba br2">
                         { Lux.Core.Helper.StringifyCyclic(this.context, 2) }
                     </pre> */}
+
+                    <button
+                        className="b ba br2 pa3"
+                        onClick={ e => {
+                            console.log(this.context);
+                            console.log(this.context.$()._state);
+                            console.log(this.context.$("GetChildren").map(c => c._state));
+                        }}
+                    >Log Info</button>
                 </div>
             </div>
         );
