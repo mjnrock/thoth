@@ -177,7 +177,7 @@ export default class Element extends Lux.Node.Struct {
         }
 
         let oldValue = Object.freeze(JSON.parse(JSON.stringify(this.Value))),
-            newValue = this.cleanValue(value);
+            newValue = this._cleanValue(value);
 
         if(index === -1) {
             this.Value.push(newValue);
@@ -197,7 +197,7 @@ export default class Element extends Lux.Node.Struct {
                 }
 
                 return true;
-            }).map(v => this.cleanValue(v));
+            }).map(v => this._cleanValue(v));
         } else if(values === null) {
             this.Value = [];
         }
