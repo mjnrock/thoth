@@ -36,6 +36,7 @@ export default class Container extends Lux.React.ObserverComponent {
         }
     };
 
+    //TODO The Droppable/Draggable should be abstracted out so that Sub Groups can have their items reordered, instead of just the "root" Group (as it is now)
     render() {
         return (
             <div>
