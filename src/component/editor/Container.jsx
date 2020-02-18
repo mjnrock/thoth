@@ -45,10 +45,10 @@ export default class Container extends Lux.React.ObserverComponent {
                         <Droppable droppableId={ this.context.$().UUID() }>
                             {(provided, snapshot) => (
                                 <div
+                                    className={ `b ba br2 pa3 ${ snapshot.isDraggingOver ? "bg-blue" : "bg-white" }` }
+                                    style={{ minHeight: "100px", minWidth: "100px" }}
                                     ref={provided.innerRef}
                                     {...provided.droppableProps}
-                                    className="b ba br2 pa3"
-                                    style={{ minHeight: "100px", minWidth: "100px" }}
                                 >
                                     {this.context.$("GetChildren").map((ele, i) => {
                                         let Element = this.getReactClass(ele);
@@ -56,12 +56,11 @@ export default class Container extends Lux.React.ObserverComponent {
                                         return (
                                             <Draggable key={ ele.UUID() } index={ i } draggableId={ ele.UUID() }>
                                                 {(provided, snapshot) => (
-                                                    <div                                                    
-                                                        
+                                                    <div
+                                                        className={ `b ba br2 pa3 mb2 ${ snapshot.isDragging ? "bg-gray" : "bg-white" }` }
                                                         ref={provided.innerRef}
                                                         {...provided.draggableProps}
                                                         {...provided.dragHandleProps}
-                                                        className="b ba br2 pa3 mb2"
                                                     >
                                                         <Element
                                                             key={ ele.UUID() }
